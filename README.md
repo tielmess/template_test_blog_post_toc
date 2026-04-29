@@ -2,7 +2,7 @@
 
 Testing a template for blog posts, with a table of contents.
 
-Experimenting with has()
+Experimenting with :has()
 
 [Demo](https://trudymessingham.co.uk/playground/css_evangelist_architecture/toc/)
 
