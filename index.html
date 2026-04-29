@@ -3,229 +3,242 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Modern CSS Architecture | CSS Evangelist Demo</title>
+    <title>Blog template with toc | CSS Evangelist Demo</title>
     <style>
-      :root{
-  --maxw: 70ch;
-  --tocw: 18rem;
-  --gap: 2rem;
-  --line: #d8d8d8;
-  --bg: #F8F3F0;
-  --card: #ffffff;
-  --ink: #383838;
-  --sage: #90A49A;
-  --rose: #DBB5B4;
-}
+      :root {
+        --maxw: 70ch;
+        --tocw: 18rem;
+        --gap: 2rem;
+        --line: #d8d8d8;
+        --bg: #f8f3f0;
+        --card: #ffffff;
+        --ink: #383838;
+        --sage: #90a49a;
+        --rose: #dbb5b4;
+      }
 
-html{
-  scroll-behavior: smooth;
-}
+      html {
+        scroll-behavior: smooth;
+      }
 
-body{
-  margin: 0;
-  color: var(--ink);
-  background: var(--bg);
-  font: 16px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-}
+      body {
+        margin: 0;
+        color: var(--ink);
+        background: var(--bg);
+        font:
+          16px/1.6 system-ui,
+          -apple-system,
+          "Segoe UI",
+          Roboto,
+          Arial,
+          sans-serif;
+      }
 
-.skip-link{
-  position: absolute;
-  left: -9999px;
-  top: 0;
-}
+      .skip-link {
+        position: absolute;
+        left: -9999px;
+        top: 0;
+      }
 
-.skip-link:focus{
-  left: 1rem;
-  top: 1rem;
-  padding: .5rem .75rem;
-  background: #fff;
-  outline: 2px solid currentColor;
-  outline-offset: 2px;
-}
+      .skip-link:focus {
+        left: 1rem;
+        top: 1rem;
+        padding: 0.5rem 0.75rem;
+        background: #fff;
+        outline: 2px solid currentColor;
+        outline-offset: 2px;
+      }
 
-.article-layout{
-  display: grid;
-  gap: var(--gap);
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 1.5rem 1rem 3rem;
-}
+      .article-layout {
+        display: grid;
+        gap: var(--gap);
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1.5rem 1rem 3rem;
+      }
 
-.article-content{
-  min-width: 0;
-}
+      .article-content {
+        min-width: 0;
+      }
 
-.article-content article{
-  max-width: var(--maxw);
-}
+      .article-content article {
+        max-width: var(--maxw);
+      }
 
-.toc{
-  border: 1px solid var(--line);
-  border-radius: .75rem;
-  padding: 1rem;
-  background: var(--card);
-  align-self: start;
-}
+      .toc {
+        border: 1px solid var(--line);
+        border-radius: 0.75rem;
+        padding: 1rem;
+        background: var(--card);
+        align-self: start;
+      }
 
-.toc h2{
-  font-size: 1rem;
-  margin-top: 0;
-  margin-bottom: .75rem;
-}
+      .toc h2 {
+        font-size: 1rem;
+        margin-top: 0;
+        margin-bottom: 0.75rem;
+      }
 
-.toc ol{
-  margin: 0;
-  padding-left: 1.2rem;
-}
+      .toc ol {
+        margin: 0;
+        padding-left: 1.2rem;
+      }
 
-.toc li + li{
-  margin-top: .4rem;
-}
+      .toc li + li {
+        margin-top: 0.4rem;
+      }
 
-.toc a{
-  text-decoration-thickness: .12em;
-  text-underline-offset: .18em;
-}
+      .toc a {
+        text-decoration-thickness: 0.12em;
+        text-underline-offset: 0.18em;
+      }
 
-.article-content h1,
-.article-content h2,
-.article-content h3{
-  line-height: 1.2;
-}
+      .article-content h1,
+      .article-content h2,
+      .article-content h3 {
+        line-height: 1.2;
+      }
 
-.article-content h2,
-.article-content h3{
-  scroll-margin-top: 6rem;
-}
+      .article-content h2,
+      .article-content h3 {
+        scroll-margin-top: 6rem;
+      }
 
-:target{
-  outline: 2px solid var(--rose);
-  outline-offset: 6px;
-}
+      :target {
+        outline: 2px solid var(--rose);
+        outline-offset: 6px;
+      }
 
-.lede{
-  font-size: 1.1rem;
-  max-width: 60ch;
-}
+      .lede {
+        font-size: 1.1rem;
+        max-width: 60ch;
+      }
 
-pre{
-  overflow: auto;
-  padding: 1rem;
-  border: 1px solid var(--line);
-  border-radius: .75rem;
-  background: #fff;
-}
+      pre {
+        overflow: auto;
+        padding: 1rem;
+        border: 1px solid var(--line);
+        border-radius: 0.75rem;
+        background: #fff;
+      }
 
-code{
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-}
+      code {
+        font-family:
+          ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      }
 
-:focus-visible{
-  outline: 2px solid currentColor;
-  outline-offset: 2px;
-}
+      :focus-visible {
+        outline: 2px solid currentColor;
+        outline-offset: 2px;
+      }
 
-/* Desktop sticky TOC */
-@media (min-width: 900px){
-  .article-layout{
-    grid-template-columns: minmax(0, 1fr) var(--tocw);
-    align-items: start;
-  }
+      /* Desktop sticky TOC */
+      @media (min-width: 900px) {
+        .article-layout {
+          grid-template-columns: minmax(0, 1fr) var(--tocw);
+          align-items: start;
+        }
 
-  .toc{
-    position: sticky;
-    top: 1rem;
-    order: 2;
-  }
+        .toc {
+          position: sticky;
+          top: 1rem;
+          order: 2;
+        }
 
-  .article-content{
-    order: 1;
-  }
-}
+        .article-content {
+          order: 1;
+        }
+      }
 
-/* Mobile: TOC appears above content */
-@media (max-width: 899px){
-  .toc{
-    position: static;
-  }
-}
+      /* Mobile: TOC appears above content */
+      @media (max-width: 899px) {
+        .toc {
+          position: static;
+        }
+      }
 
-/* Progressive enhancement: highlight cards or TOC with :has() */
-@supports selector(.toc:has(a:focus-visible)){
-  .toc:has(a:focus-visible){
-    box-shadow: 0 0 0 3px rgba(144,164,154,.25);
-  }
-}
+      /* Progressive enhancement: highlight cards or TOC with :has() */
+      @supports selector(.toc:has(a:focus-visible)) {
+        .toc:has(a:focus-visible) {
+          box-shadow: 0 0 0 3px rgba(144, 164, 154, 0.25);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-</style>
-</head>
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
+    <div class="article-layout">
+      <aside class="toc" aria-labelledby="toc-title">
+        <h2 id="toc-title">On this page</h2>
+        <nav aria-label="Table of contents">
+          <ol>
+            <li><a href="#intro">Introduction</a></li>
+            <li><a href="#why-it-matters">Why it matters</a></li>
+            <li><a href="#quick-win">Quick win</a></li>
+            <li><a href="#example">Example</a></li>
+            <li><a href="#checklist">Checklist</a></li>
+            <li><a href="#qa">Q&amp;A</a></li>
+          </ol>
+        </nav>
+      </aside>
 
-<div class="article-layout">
-  <aside class="toc" aria-labelledby="toc-title">
-    <h2 id="toc-title">On this page</h2>
-    <nav aria-label="Table of contents">
-      <ol>
-        <li><a href="#intro">Introduction</a></li>
-        <li><a href="#why-it-matters">Why it matters</a></li>
-        <li><a href="#quick-win">Quick win</a></li>
-        <li><a href="#example">Example</a></li>
-        <li><a href="#checklist">Checklist</a></li>
-        <li><a href="#qa">Q&amp;A</a></li>
-      </ol>
-    </nav>
-  </aside>
+      <main id="main" class="article-content">
+        <article>
+          <header>
+            <h1>Article title goes here</h1>
+            <p class="lede">
+              A short introduction that explains what this article will help the
+              reader do.
+            </p>
+          </header>
 
-  <main id="main" class="article-content">
-    <article>
-      <header>
-        <h1>Article title goes here</h1>
-        <p class="lede">
-          A short introduction that explains what this article will help the reader do.
-        </p>
-      </header>
+          <section id="intro" aria-labelledby="intro-title">
+            <h2 id="intro-title">Introduction</h2>
+            <p>
+              Start with the context. Tell the reader what problem you’re
+              solving and why it matters.
+            </p>
+          </section>
 
-      <section id="intro" aria-labelledby="intro-title">
-        <h2 id="intro-title">Introduction</h2>
-        <p>Start with the context. Tell the reader what problem you’re solving and why it matters.</p>
-      </section>
+          <section id="why-it-matters" aria-labelledby="why-title">
+            <h2 id="why-title">Why it matters</h2>
+            <p>
+              Explain the practical benefit—performance, accessibility,
+              maintainability, or clarity.
+            </p>
+          </section>
 
-      <section id="why-it-matters" aria-labelledby="why-title">
-        <h2 id="why-title">Why it matters</h2>
-        <p>Explain the practical benefit—performance, accessibility, maintainability, or clarity.</p>
-      </section>
-
-      <section id="quick-win" aria-labelledby="quick-win-title">
-        <h2 id="quick-win-title">Quick win</h2>
-        <p>Give the smallest useful thing they can do right now.</p>
-        <pre><code>.example {
+          <section id="quick-win" aria-labelledby="quick-win-title">
+            <h2 id="quick-win-title">Quick win</h2>
+            <p>Give the smallest useful thing they can do right now.</p>
+            <pre><code>.example {
   display: grid;
   gap: 1rem;
 }</code></pre>
-      </section>
+          </section>
 
-      <section id="example" aria-labelledby="example-title">
-        <h2 id="example-title">Example</h2>
-        <p>Show the pattern in practice. Keep it simple and concrete.</p>
-      </section>
+          <section id="example" aria-labelledby="example-title">
+            <h2 id="example-title">Example</h2>
+            <p>Show the pattern in practice. Keep it simple and concrete.</p>
+          </section>
 
-      <section id="checklist" aria-labelledby="checklist-title">
-        <h2 id="checklist-title">Checklist</h2>
-        <ul>
-          <li>Do the simple thing first</li>
-          <li>Measure before and after</li>
-          <li>Keep the markup semantic</li>
-          <li>Make focus visible</li>
-        </ul>
-      </section>
+          <section id="checklist" aria-labelledby="checklist-title">
+            <h2 id="checklist-title">Checklist</h2>
+            <ul>
+              <li>Do the simple thing first</li>
+              <li>Measure before and after</li>
+              <li>Keep the markup semantic</li>
+              <li>Make focus visible</li>
+            </ul>
+          </section>
 
-      <section id="qa" aria-labelledby="qa-title">
-        <h2 id="qa-title">Q&amp;A</h2>
-        <p>Wrap up with one reader question or a prompt for replies.</p>
-      </section>
-    </article>
-  </main>
-</div>
-</body>
+          <section id="qa" aria-labelledby="qa-title">
+            <h2 id="qa-title">Q&amp;A</h2>
+            <p>Wrap up with one reader question or a prompt for replies.</p>
+          </section>
+        </article>
+      </main>
+    </div>
+  </body>
 </html>
