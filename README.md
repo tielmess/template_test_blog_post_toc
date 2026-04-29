@@ -1,4 +1,4 @@
-# Modern CSS Architecture
+# Blog template with TOC
 
 Testing a template for blog posts, with a table of contents.
 
